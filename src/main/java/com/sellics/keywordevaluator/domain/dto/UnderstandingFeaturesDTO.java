@@ -4,40 +4,58 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.List;
 
-public class UnderstandingFeaturesDTO {
+/**
+ * The type Understanding features dto.
+ */
+public class UnderstandingFeaturesDTO
+{
 
-    String source;
-    List<String> annotations;
+    private String source;
+    private List<String> annotations;
 
-    public UnderstandingFeaturesDTO() {
+
+    public UnderstandingFeaturesDTO()
+    {
     }
 
-    public UnderstandingFeaturesDTO(String source, List<String> annotations) {
+
+    public UnderstandingFeaturesDTO(String source, List<String> annotations)
+    {
         this.source = source;
         this.annotations = annotations;
     }
 
-    public String getSource() {
+
+    public String getSource()
+    {
         return source;
     }
 
-    public void setSource(String source) {
+
+    public void setSource(String source)
+    {
         this.source = source;
     }
 
-    public List<String> getAnnotations() {
+
+    public List<String> getAnnotations()
+    {
         return annotations;
     }
 
-    public void setAnnotations(List<String> annotations) {
+
+    public void setAnnotations(List<String> annotations)
+    {
         this.annotations = annotations;
     }
 
+
     @Override
-    public String toString() {
+    public String toString()
+    {
         return new ToStringBuilder(this)
-                .append("source", source)
-                .append("annotations", annotations)
-                .toString();
+            .append("source", source)
+            .append("annotations", annotations)
+            .toString();
     }
 }

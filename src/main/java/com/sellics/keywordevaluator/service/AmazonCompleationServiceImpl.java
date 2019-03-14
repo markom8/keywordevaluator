@@ -26,17 +26,15 @@ public class AmazonCompleationServiceImpl implements AmazonCompleationService {
     }
 
     @Override
-    public List<AmazonCompletionDTO> getCompleationsForKeyword(String keyword){
+    public List<AmazonCompletionDTO> getCompletionsForKeyword(String keyword){
 
         List<Task> tasks = new ArrayList<>();
         for (int i = 1; i <= keyword.length(); i++) {
             tasks.add(new Task(new URLBuilder().setKeyword(keyword.substring(0, i)).buildURL(), restTemplate));
         }
-        List<Future<AmazonCompletionDTO>> completionResponses = tasks.stream().map(t->{
-            return executor.submit(t);
-        }).collect(Collectors.toList());
+        List<Future<AmazonCompletionDTO>> completionResponses = tasks.stream().map(t-> executor.submit(t)).collect(Collectors.toList());
 
-        List<AmazonCompletionDTO> responses =  completionResponses.stream().map(r -> {
+        return completionResponses.stream().map(r -> {
             try {
                 return r.get();
             } catch (InterruptedException e) {
@@ -47,9 +45,5 @@ public class AmazonCompleationServiceImpl implements AmazonCompleationService {
                 return null;
             }
         }).collect(Collectors.toList());
-
-        return responses;
     }
-
-
 }

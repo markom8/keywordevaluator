@@ -5,8 +5,12 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+
 import java.util.concurrent.Callable;
 
+/**
+ * The type Task.
+ */
 public class Task implements Callable<AmazonCompletionDTO>
 {
 
@@ -22,7 +26,7 @@ public class Task implements Callable<AmazonCompletionDTO>
 
 
     @Override
-    public AmazonCompletionDTO call() throws Exception
+    public AmazonCompletionDTO call()
     {
         ResponseEntity<AmazonCompletionDTO> response = restTemplate.exchange(
             url,

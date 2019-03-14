@@ -4,25 +4,34 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.List;
 
-public class Suggestion {
+/**
+ * The type Suggestion.
+ */
+public class Suggestion
+{
 
-        String suggType;
-        String type;
-        String value;
-        String refTag;
-        boolean ghost;
-        boolean help;
-        List<UnderstandingFeaturesDTO> queryUnderstandingFeatures;
-        boolean xcatOnly;
-        boolean fallback;
-        boolean blackListed;
-          boolean spellCorrected;
+    private String suggType;
+    private String type;
+    private String value;
+    private String refTag;
+    private boolean ghost;
+    private boolean help;
+    private List<UnderstandingFeaturesDTO> queryUnderstandingFeatures;
+    private boolean xcatOnly;
+    private boolean fallback;
+    private boolean blackListed;
+    private boolean spellCorrected;
 
 
-    public Suggestion() {
+    public Suggestion()
+    {
     }
 
-    public Suggestion(String suggType, String type, String value, String refTag, boolean ghost, boolean help, List<UnderstandingFeaturesDTO> queryUnderstandingFeatures, boolean xcatOnly, boolean fallback, boolean blackListed, boolean spellCorrected) {
+
+    public Suggestion(
+        String suggType, String type, String value, String refTag, boolean ghost, boolean help, List<UnderstandingFeaturesDTO> queryUnderstandingFeatures, boolean xcatOnly,
+        boolean fallback, boolean blackListed, boolean spellCorrected)
+    {
         this.suggType = suggType;
         this.type = type;
         this.value = value;
@@ -36,109 +45,154 @@ public class Suggestion {
         this.spellCorrected = spellCorrected;
     }
 
-    public String getSuggType() {
+
+    public String getSuggType()
+    {
         return suggType;
     }
 
-    public void setSuggType(String suggType) {
+
+    public void setSuggType(String suggType)
+    {
         this.suggType = suggType;
     }
 
-    public String getType() {
+
+    public String getType()
+    {
         return type;
     }
 
-    public void setType(String type) {
+
+    public void setType(String type)
+    {
         this.type = type;
     }
 
-    public String getValue() {
+
+    public String getValue()
+    {
         return value;
     }
 
-    public void setValue(String value) {
+
+    public void setValue(String value)
+    {
         this.value = value;
     }
 
-    public String getRefTag() {
+
+    public String getRefTag()
+    {
         return refTag;
     }
 
-    public void setRefTag(String refTag) {
+
+    public void setRefTag(String refTag)
+    {
         this.refTag = refTag;
     }
 
-    public boolean isGhost() {
+
+    public boolean isGhost()
+    {
         return ghost;
     }
 
-    public void setGhost(boolean ghost) {
+
+    public void setGhost(boolean ghost)
+    {
         this.ghost = ghost;
     }
 
-    public boolean isHelp() {
+
+    public boolean isHelp()
+    {
         return help;
     }
 
-    public void setHelp(boolean help) {
+
+    public void setHelp(boolean help)
+    {
         this.help = help;
     }
 
-    public List<UnderstandingFeaturesDTO> getQueryUnderstandingFeatures() {
+
+    public List<UnderstandingFeaturesDTO> getQueryUnderstandingFeatures()
+    {
         return queryUnderstandingFeatures;
     }
 
-    public void setQueryUnderstandingFeatures(List<UnderstandingFeaturesDTO> queryUnderstandingFeatures) {
+
+    public void setQueryUnderstandingFeatures(List<UnderstandingFeaturesDTO> queryUnderstandingFeatures)
+    {
         this.queryUnderstandingFeatures = queryUnderstandingFeatures;
     }
 
-    public boolean isXcatOnly() {
+
+    public boolean isXcatOnly()
+    {
         return xcatOnly;
     }
 
-    public void setXcatOnly(boolean xcatOnly) {
+
+    public void setXcatOnly(boolean xcatOnly)
+    {
         this.xcatOnly = xcatOnly;
     }
 
-    public boolean isFallback() {
+
+    public boolean isFallback()
+    {
         return fallback;
     }
 
-    public void setFallback(boolean fallback) {
+
+    public void setFallback(boolean fallback)
+    {
         this.fallback = fallback;
     }
 
-    public boolean isBlackListed() {
+
+    public boolean isBlackListed()
+    {
         return blackListed;
     }
 
-    public void setBlackListed(boolean blackListed) {
+
+    public void setBlackListed(boolean blackListed)
+    {
         this.blackListed = blackListed;
     }
 
-    public boolean isSpellCorrected() {
+
+    public boolean isSpellCorrected()
+    {
         return spellCorrected;
     }
 
-    public void setSpellCorrected(boolean spellCorrected) {
+
+    public void setSpellCorrected(boolean spellCorrected)
+    {
         this.spellCorrected = spellCorrected;
     }
 
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return new ToStringBuilder(this)
-                .append("suggType", suggType)
-                .append("type", type)
-                .append("value", value)
-                .append("refTag", refTag)
-                .append("ghost", ghost)
-                .append("help", help)
-                .append("queryUnderstandingFeatures", queryUnderstandingFeatures)
-                .append("xcatOnly", xcatOnly)
-                .append("fallback", fallback)
-                .append("blackListed", blackListed)
-                .append("spellCorrected", spellCorrected)
-                .toString();
+            .append("suggType", suggType)
+            .append("type", type)
+            .append("value", value)
+            .append("refTag", refTag)
+            .append("ghost", ghost)
+            .append("help", help)
+            .append("queryUnderstandingFeatures", queryUnderstandingFeatures)
+            .append("xcatOnly", xcatOnly)
+            .append("fallback", fallback)
+            .append("blackListed", blackListed)
+            .append("spellCorrected", spellCorrected)
+            .toString();
     }
 }

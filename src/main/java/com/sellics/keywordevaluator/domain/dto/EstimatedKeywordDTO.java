@@ -2,6 +2,9 @@ package com.sellics.keywordevaluator.domain.dto;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+/**
+ * The type Estimated keyword dto.
+ */
 public class EstimatedKeywordDTO {
     private String keyword;
     private int score;

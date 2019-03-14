@@ -22,7 +22,7 @@ public class AmazonEstimationServiceImpl implements AmazonEstimationService {
     @Override
     public EstimatedKeywordDTO estimateKeyword(String keyword) throws ExecutionException, InterruptedException
     {
-        List<AmazonCompletionDTO> completionResponses = amazonCompleationService.getCompleationsForKeyword(keyword);
+        List<AmazonCompletionDTO> completionResponses = amazonCompleationService.getCompletionsForKeyword(keyword);
         List<List<Suggestion>> suggestionLists = completionResponses.stream().map(AmazonCompletionDTO::getSuggestions).collect(Collectors.toList());
         Map<String, Integer> suggestionKeywords = new HashMap<>();
         for (List<Suggestion> suggestionList : suggestionLists) {
@@ -40,6 +40,6 @@ public class AmazonEstimationServiceImpl implements AmazonEstimationService {
             }
         }
 
-        return new EstimatedKeywordDTO(keyword, (int)(numberOfSuggestions*10)/completionResponses.size());
+        return new EstimatedKeywordDTO(keyword, (numberOfSuggestions*10)/completionResponses.size());
     }
 }

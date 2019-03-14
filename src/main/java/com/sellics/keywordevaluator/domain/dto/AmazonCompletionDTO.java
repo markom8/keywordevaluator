@@ -6,6 +6,9 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.List;
 
+/**
+ * The type Amazon completion dto.
+ */
 public class AmazonCompletionDTO {
 
     private String alias;
