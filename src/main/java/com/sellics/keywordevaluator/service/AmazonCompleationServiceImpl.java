@@ -48,11 +48,6 @@ public class AmazonCompleationServiceImpl implements AmazonCompleationService {
             }
         }).collect(Collectors.toList());
 
-        executor.shutdown();
-        while (!executor.isTerminated()) {
-            Thread.yield();
-        }
-
         return responses;
     }
 
